@@ -113,6 +113,12 @@ k get pod -L system
 ## supprime les pod ayant comme label system=IsolatedPod
 k delete po -l system=IsolatedPod
 
+
+## execute une commande sur un pod
+k exec -it shell-demo -- /bin/bash -c 'echo $ilike'
+
+
+
 ## example :
 k create -f curl.yaml -n kube-public
 k create -f frontend.yaml 

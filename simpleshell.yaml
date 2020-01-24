@@ -1,14 +1,17 @@
-apiversion: v1
-kind: pod
+apiVersion: v1
+kind: Pod
 metadata:
   name: shell-demo
 spec:
   containers:
     - name: nginx
       image: nginx
-      env:
-        - name: ilike
-          valueFrom:
-            configMapKeyRef:
-              key: favorite
-              name: colors
+#      env:
+#        - name: ilike
+#          valueFrom:
+#            configMapKeyRef:
+#              key: favorite
+#              name: colors
+      envFrom:
+      - configMapRef:
+          name: colors
