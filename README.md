@@ -127,6 +127,29 @@ k rollout history deployment frontend
 ## RollBack du deployment
 k rollout undu deployment frontend
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## dans .bashrc
 alias k='kubectl'
 ## auto completion
