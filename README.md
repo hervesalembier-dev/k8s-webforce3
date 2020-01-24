@@ -97,6 +97,23 @@ k -n low-usage-limit create deployment limited-hog --image vish/stress
 ## affiche la liste des replicats set
 k get rs -A -o wide
 
+## supprime le replicats set sans supprimer les pods
+k delete rs rs-one --cascade=false
+
+## modifie un fichier yaml
+k edit pod rs-one-4zx7l 
+## labels: system: IsolatedPod / ReplicaOne / DaemonSetOne
+## isolatedPod permet d'isoler le pod afin de l'étudier
+
+
+
+## Afiche le type de system en plus des infos pods
+k get pod -L system
+
+## supprime les pod ayant comme label system=IsolatedPod
+k delete po -l system=IsolatedPod
+
+
 
 
 ## dans .bashrc
