@@ -113,8 +113,19 @@ k get pod -L system
 ## supprime les pod ayant comme label system=IsolatedPod
 k delete po -l system=IsolatedPod
 
+## example :
+k create -f curl.yaml -n kube-public
+k create -f frontend.yaml 
+k create -f webapp-service.yaml 
+chmod +x curl-test.sh
+./curl-test.sh
 
-
+## Etat du déploiement
+k rollout status deployment frontend 
+## Historique du déploiement
+k rollout history deployment frontend
+## RollBack du deployment
+k rollout undu deployment frontend
 
 ## dans .bashrc
 alias k='kubectl'
