@@ -75,11 +75,14 @@ k get svc -A
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}' )
 
 # affiche les logs
+k get logs
 
 
-
-## CPU et limits
+## CPU et limits => test memoire
 k create deployment hog --image vish/stress
+
+## Namespace
+k create namespace low-usage-limit
 
 
 ## dans .bashrc
