@@ -71,8 +71,11 @@ k expose deployment nginx --type=LoadBalancer
 ##
 k get svc -A
 
-##
+## Récupère le token pour accéder à l'administration kubernetes
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}' )
+
+# affiche les logs
+
 
 
 ## CPU et limits
