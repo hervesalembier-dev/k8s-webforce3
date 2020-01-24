@@ -83,6 +83,20 @@ k create deployment hog --image vish/stress
 
 ## Namespace
 k create namespace low-usage-limit
+## Configure namespace depuis fichier
+k --namespace=low-usage-limit create -f low-resource-range.yaml 
+## affiche les limitrange (-A affiche tous les namespace)
+k get limitranges -A
+k -n low-usage-limit get limitranges 
+
+
+
+## deploie un container en utilisant un namespace et son limitrange associé (-n spécifie le namespace)
+k -n low-usage-limit create deployment limited-hog --image vish/stress
+
+## affiche la liste des replicats set
+k get rs -A -o wide
+
 
 
 ## dans .bashrc
