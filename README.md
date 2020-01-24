@@ -79,6 +79,9 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 k create deployment hog --image vish/stress
 
 
-
+## dans .bashrc
+alias k='kubectl'
+## auto completion
+source <( kubectl completion bash | sed s/kubectl/k/g)
 
 ```
