@@ -68,7 +68,7 @@ k exec nginx-85ff79dd56-s4z4h -- printenv | grep KUBERNETES
 ## expose le service à l'extérieur
 k expose deployment nginx --type=LoadBalancer
 
-##
+## affiche tous les services dont ceux prop à k8s comme le dashboard
 k get svc -A
 
 ## Récupère le token pour accéder à l'administration kubernetes
