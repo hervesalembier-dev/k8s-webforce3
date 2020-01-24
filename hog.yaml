@@ -28,7 +28,11 @@ spec:
       - image: vish/stress
         imagePullPolicy: Always
         name: stress
-        resources: {}
+        resources:
+          limits:
+            memory: "4Gi"
+          requests:
+            memory: "2500Mi"
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
