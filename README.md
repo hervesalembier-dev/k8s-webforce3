@@ -117,6 +117,14 @@ k delete po -l system=IsolatedPod
 ## execute une commande sur un pod
 k exec -it shell-demo -- /bin/bash -c 'echo $ilike'
 
+## affiche les DaemonSetOne
+k get ds
+## supprime un daemonSetOne
+k delete ds ...
+
+## redirection de port
+k port-forward svc/mysql 3306
+
 
 
 ## example :
@@ -132,25 +140,6 @@ k rollout status deployment frontend
 k rollout history deployment frontend
 ## RollBack du deployment
 k rollout undu deployment frontend
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
